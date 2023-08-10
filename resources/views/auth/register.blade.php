@@ -25,34 +25,47 @@
               <div class="card-body p-md-5 mx-md-4">
 
                 <div class="text-center">
-                  <img src="https://cdn-icons-png.flaticon.com/256/1738/1738691.png"
+                  <img src="https://cdn-icons-png.flaticon.com/128/760/760847.png"
                   style="width: 185px;" alt="logo">
-                  <h3 class="mt-1 mb-5 pb-1">Iniciar sesión</h3>
+                  <h3 class="mt-1 mb-5 pb-1">Registrarse</h3>
                 </div>
 
                 <form action="{{route('login')}}" method= "post">
                   @csrf
                   <p></p>
+                  
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example11" class="form-control"
-                      placeholder="Correo electrónico" />
-                    <label class="form-label" for="form2Example11"></label>
+                    <label class="form-label" for="form2Example33">Nombre</label>
+                    <input type="text" name="text" id="form2Example33" class="form-control"
+                      placeholder=" " />
+                    
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">Correo electrónico</label>
+                    <input type="email" name="email" id="form2Example11" class="form-control"
+                      placeholder=" " />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="Contraseña" id="form2Example22" class="form-control"
-                    placeholder="Contraseña"  />
-                    <label class="form-label" for="form2Example22"></label>
+                    <label class="form-label" for="form2Example22">Contraseña</label>
+                    <input type="password" name="pasword" id="form2Example22" class="form-control"
+                    placeholder=" "  />
                   </div>
 
-                  <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Iniciar Sesión</button>
-                    <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example44">Confirma tu contraseña</label>
+                    <input type="password" name="pasword" id="form2Example44" class="form-control"
+                    placeholder=" "  />
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">¿No tienes cuenta?</p>
-                    <button type="button" class="btn btn-outline-danger">Crear cuenta</button>
+                    <a href="{{route('login')}}" class="btn btn-outline-primary">Iniciar sesión</a>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    
+                    <button type="submit" class="btn btn-outline-danger">Registrarse</button>
                     
                   </div>
 
