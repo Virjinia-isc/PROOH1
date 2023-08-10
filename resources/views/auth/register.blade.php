@@ -55,7 +55,7 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example44">Confirma tu contraseña</label>
-                    <input type="password" name="pasword" id="form2Example44" class="form-control"
+                    <input type="password_confirmation" name="pasword" id="form2Example44" class="form-control"
                     placeholder=" "  />
                   </div>
 
