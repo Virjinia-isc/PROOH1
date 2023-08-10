@@ -10,6 +10,7 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
     <link rel = "stylesheet"href= "{{asset ('assets/estilos.css')}}">
 
 </head>
@@ -34,25 +35,25 @@
                   @csrf
                   <p></p>
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example11" class="form-control"
-                      placeholder="Correo electrónico" />
-                    <label class="form-label" for="form2Example11"></label>
+                    <label class="form-label" for="form2Example11">Correo electrónico</label>
+                    <input type="email" name="email" id="form2Example11" class="form-control"
+                      placeholder=" " />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="Contraseña" id="form2Example22" class="form-control"
-                    placeholder="Contraseña"  />
-                    <label class="form-label" for="form2Example22"></label>
+                    <label class="form-label" for="form2Example22">Contraseña</label>
+                    <input type="password" name="pasword" id="form2Example22" class="form-control"
+                    placeholder=" "  />
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Iniciar Sesión</button>
+                    <button class="btn btn-outline-primary">Iniciar sesión</button>
                     <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a>
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <p class="mb-0 me-2">¿No tienes cuenta?</p>
-                    <a href="{{route('register')}}" class="btn btn-outline-danger">Crear cuenta</a>
+                    <a href="{{route('register')}}" class="btn btn-outline-danger">Registrarse</a>
                     
                   </div>
 
