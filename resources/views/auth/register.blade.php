@@ -11,7 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel = "stylesheet"href= "{{asset ('assets/estilos.css')}}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -46,19 +46,21 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example22">Contraseña</label>
-                    <input type="password" name="pasword" id="form2Example22" class="form-control" minlength="8" required/>
+                    <div class="input-group position-relative">
+                      <input type="password" name="password" id="form2Example22" class="form-control" minlength="8" required/>
+                      <button class="btn btn-outline-secondary password-toggle-icon" type="button" id="togglePassword">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                    </div>
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example44">Confirma tu contraseña</label>
-                    <input type="password" name="pasword_confirmation" id="form2Example44" class="form-control" required/>
+                    <input type="password" name="password_confirmation" id="form2Example44" class="form-control" required/>
                   </div>
 
-                  <div class="d-flex align-items-center justify-content-center pb-4">
+                  <div class="d-flex justify-content-between pb-4">
                     <a href="{{route('login')}}" class="btn btn-outline-primary">Iniciar sesión</a>
-                  </div>
-
-                  <div class="text-center pt-1 mb-5 pb-1">
                     <button class="btn btn-outline-danger" type="submit">Registrarse</button>
                   </div>
 
@@ -87,6 +89,29 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const togglePassword = document.querySelector("#togglePassword");
+    const passwordInput = document.querySelector("#form2Example22");
+  
+    togglePassword.addEventListener("click", function() {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+  
+      // Cambiar el ícono del botón
+      const icon = this.querySelector("i");
+      if (icon.classList.contains("fa-eye")) {
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    });
+  });
+  </script>
+
 </body>
 
 </html>
