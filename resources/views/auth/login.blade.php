@@ -36,14 +36,12 @@
                   <p></p>
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example11">Correo electrónico</label>
-                    <input type="email" name="email" id="form2Example11" class="form-control"
-                      placeholder=" " />
+                    <input type="email" name="email" id="form2Example11" class="form-control" required />
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example22">Contraseña</label>
-                    <input type="password" name="pasword" id="form2Example22" class="form-control"
-                    placeholder=" "  />
+                    <input type="password" name="pasword" id="form2Example22" class="form-control" required/>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
