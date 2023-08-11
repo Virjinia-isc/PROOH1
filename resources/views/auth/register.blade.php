@@ -30,43 +30,36 @@
                   <h3 class="mt-1 mb-5 pb-1">Registrarse</h3>
                 </div>
 
-                <form action="{{route('login')}}" method= "post">
+                <form action="{{route('register')}}" method= "post">
                   @csrf
                   <p></p>
                   
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example33">Nombre</label>
-                    <input type="text" name="text" id="form2Example33" class="form-control"
-                      placeholder=" " />
-                    
+                    <label class="form-label" for="form2Example33">Nombre completo</label>
+                    <input type="text" name="name" id="form2Example33" class="form-control" minlength="10" required/>
                   </div>
                   
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example11">Correo electrónico</label>
-                    <input type="email" name="email" id="form2Example11" class="form-control"
-                      placeholder=" " />
+                    <input type="email" name="email" id="form2Example11" class="form-control" required />
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example22">Contraseña</label>
-                    <input type="password" name="pasword" id="form2Example22" class="form-control"
-                    placeholder=" "  />
+                    <input type="password" name="pasword" id="form2Example22" class="form-control" minlength="8" required/>
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example44">Confirma tu contraseña</label>
-                    <input type="password_confirmation" name="pasword" id="form2Example44" class="form-control"
-                    placeholder=" "  />
+                    <input type="password" name="pasword_confirmation" id="form2Example44" class="form-control" required/>
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <a href="{{route('login')}}" class="btn btn-outline-primary">Iniciar sesión</a>
                   </div>
 
-                  <div class="d-flex align-items-center justify-content-center pb-4">
-                    
-                    <button type="submit" class="btn btn-outline-danger">Registrarse</button>
-                    
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-outline-danger" type="submit">Registrarse</button>
                   </div>
 
                 </form>
@@ -76,8 +69,8 @@
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <h4 class="mb-4">Información de ingreso</h4>
-                <p class="small mb-0">Pulsar el icono del correo para solicitar una cuenta
-                    para ingersar a la página.</p>
+                <p class="small mb-0">Pulsar el icono del correo para solicitar una
+                    cuenta e ingersar a la página.</p>
               </div>
             </div>
           </div>
