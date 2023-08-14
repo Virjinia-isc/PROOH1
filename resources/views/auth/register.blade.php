@@ -23,40 +23,39 @@
           <div class="row g-0">
             <div class="col-lg-6">
               <div class="card-body p-md-5 mx-md-4">
-
                 <div class="text-center">
-                  <img src="https://cdn-icons-png.flaticon.com/128/760/760847.png"
-                  style="width: 185px;" alt="logo">
+                  <img src="https://cdn-icons-png.flaticon.com/128/760/760847.png" style="width: 185px;" alt="logo">
                   <h3 class="mt-1 mb-5 pb-1">Registrarse</h3>
                 </div>
-
-                <form action="{{route('register')}}" method= "post">
+                <form action="{{route('register')}}" method= "post" id="registrationForm">
                   @csrf
                   <p></p>
-                  
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example33">Nombre completo</label>
-                    <input type="text" name="name" id="form2Example33" class="form-control" minlength="10" required/>
+                    <input type="text" name="name" id="form2Example33" pattern="[[A-Z][a-z][\s]]*" class="form-control" minlength="10" style='text-transform:capitalize;' />
                   </div>
-                  
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example11">Correo electrónico</label>
                     <input type="email" name="email" id="form2Example11" class="form-control" required />
                   </div>
-
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example22">Contraseña</label>
                     <div class="input-group position-relative">
                       <input type="password" name="password" id="form2Example22" class="form-control" minlength="8" required/>
                       <button class="btn btn-outline-secondary password-toggle-icon" type="button" id="togglePassword">
-                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-eye-slash"></i>
                       </button>
                     </div>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example44">Confirma tu contraseña</label>
-                    <input type="password" name="password_confirmation" id="form2Example44" class="form-control" required/>
+                    <label class="form-label" for="form2Example23">Confirma tu contraseña</label>
+                    <div class="input-group position-relative">
+                      <input type="password" name="password_confirmation" id="form2Example23" class="form-control" required/>  
+                      <button class="btn btn-outline-secondary password-toggle-icon" type="button" id="togglePassword2">
+                        <i class="fas fa-eye-slash"></i>
+                      </button>
+                    </div>
                   </div>
 
                   <div class="d-flex justify-content-between pb-4">
@@ -65,13 +64,12 @@
                   </div>
 
                 </form>
-
               </div>
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                 <h4 class="mb-4">Información de ingreso</h4>
-                <p class="small mb-0">Pulsar el icono del correo para solicitar una
+                <p class="medium mb-0">Pulsar el icono del correo para solicitar una
                     cuenta e ingersar a la página.</p>
               </div>
             </div>
@@ -90,28 +88,59 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const togglePassword = document.querySelector("#togglePassword");
-    const passwordInput = document.querySelector("#form2Example22");
-  
-    togglePassword.addEventListener("click", function() {
-      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-      passwordInput.setAttribute("type", type);
-  
-      // Cambiar el ícono del botón
-      const icon = this.querySelector("i");
-      if (icon.classList.contains("fa-eye")) {
-        icon.classList.remove("fa-eye");
-        icon.classList.add("fa-eye-slash");
-      } else {
-        icon.classList.remove("fa-eye-slash");
-        icon.classList.add("fa-eye");
-      }
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const togglePassword = document.querySelector("#togglePassword");
+      const passwordInput = document.querySelector("#form2Example22");
+      
+      togglePassword.addEventListener("click", function() {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+    
+        // Cambiar el ícono del botón
+        const icon = this.querySelector("i");
+        if (icon.classList.contains("fa-eye-slash")) {
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        } else {
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        }
+      });
     });
-  });
-  </script>
+    </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const togglePassword2 = document.querySelector("#togglePassword2");
+      const passwordInput2 = document.querySelector("#form2Example23");
+    
+      togglePassword2.addEventListener("click", function() {
+        const type = passwordInput2.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput2.setAttribute("type", type);
+    
+        // Cambiar el ícono del botón
+        const icon = this.querySelector("i");
+        if (icon.classList.contains("fa-eye-slash")) {
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        } else {
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        }
+      });
+      const registrationForm = document.querySelector("#registrationForm");
+      registrationForm.addEventListener("submit", function(event) {
+        const passwordValue = passwordInput.value;
+        const passwordConfirmationValue = passwordInput2.value;
+        
+        if (passwordValue !== passwordConfirmationValue) {
+          event.preventDefault(); // Evita el envío del formulario
+          alert("Las contraseñas no coinciden. Por favor, verifique.");
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
