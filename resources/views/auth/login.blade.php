@@ -46,13 +46,13 @@
                     <div class="input-group position-relative">
                       <input type="password" name="password" id="form2Example22" class="form-control" minlength="8" required/>
                       <button class="btn btn-outline-secondary password-toggle-icon" type="button" id="togglePassword">
-                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-eye-slash"></i>
                       </button>
                     </div>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-outline-primary">Iniciar sesión</button>
+                    <button class="btn btn-outline-primary" type="submit">Iniciar sesión</button>
                     <a class="text-muted" href="#!">¿Olvidaste tu contraseña?</a>
                   </div>
 
@@ -62,12 +62,11 @@
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/PROOH.MX?mibextid=ZbWKwL" style="margin-right: 10px;">
-                      <img src="https://cdn-icons-png.flaticon.com/128/2504/2504903.png" style="width: 20px;" alt="facebook"></a>
-                      <img src="https://cdn-icons-png.flaticon.com/128/5968/5968534.png" style="width: 20px;" alt="email"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/PROOH.MX?mibextid=ZbWKwL" style="margin-right: 10px;">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2504/2504903.png" style="width: 20px;" alt="facebook"></a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=i.velazquez@prooh.mx">
+                    <img src="https://cdn-icons-png.flaticon.com/128/5968/5968534.png" style="width: 20px;" alt="email"></a>
                   </div>
-                    
-                    
 
                 </form>
 
@@ -106,12 +105,12 @@
     
         // Cambiar el ícono del botón
         const icon = this.querySelector("i");
-        if (icon.classList.contains("fa-eye")) {
-          icon.classList.remove("fa-eye");
-          icon.classList.add("fa-eye-slash");
-        } else {
+        if (icon.classList.contains("fa-eye-slash")) {
           icon.classList.remove("fa-eye-slash");
           icon.classList.add("fa-eye");
+        } else {
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
         }
       });
     });
